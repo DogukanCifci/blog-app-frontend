@@ -13,7 +13,7 @@ import {
   RightSide,
 } from "../styles/Navbar";
 import image1 from "../assets/ok.png";
-import { AuthContext } from "../context/AuthContextProvider";
+import { AuthContext, userHandle } from "../context/AuthContextProvider";
 
 const Navbar = () => {
   const { user, setUser } = useContext(AuthContext);
@@ -28,7 +28,7 @@ const Navbar = () => {
   //LOGIN-LOGOUT
   const LoginLogoutHandle = () => {
     if (user?.name) {
-      setUser({});
+      userHandle(user, setUser);
     }
   };
 
