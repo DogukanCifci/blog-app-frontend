@@ -1,12 +1,19 @@
+import { useEffect } from "react";
 import "./App.css";
-import foto1 from "./assets/delete.png";
-import foto2 from "./assets/ok.png";
+import AuthContextProvider from "./context/AuthContextProvider";
+import Router from "./router/Router";
 
 function App() {
+  const API_KEY = "AIzaSyANVuxHAs7YPTShHurhbd5C_nr0myWbAW0";
+  const url = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`;
+
+  useEffect(() => {
+    //
+  }, [url]);
   return (
-    <div className="App">
-      <button className="btn btn-primary text-danger">LOGIN</button>
-    </div>
+    <AuthContextProvider>
+      <Router />
+    </AuthContextProvider>
   );
 }
 
