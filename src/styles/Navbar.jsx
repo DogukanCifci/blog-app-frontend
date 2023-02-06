@@ -40,10 +40,12 @@ export const LinkDiv = styled.div`
 export const Home = styled(LinkDiv)``;
 export const About = styled(LinkDiv)``;
 export const Profile = styled(LinkDiv)`
-  display: ${({ user }) => (user ? "" : "none")};
+  display: ${({ user }) => (user?.name ? "" : "none")};
 `;
-export const AddNew = styled(LinkDiv)``;
+export const AddNew = styled(Profile)``;
 export const LoginLogout = styled(LinkDiv)``;
-export const Register = styled(LinkDiv)``;
+export const Register = styled(Profile)`
+  display: ${({ user }) => (user?.name ? "none" : "block")};
+`;
 
 // #####Bitis######
