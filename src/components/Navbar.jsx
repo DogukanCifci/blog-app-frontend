@@ -3,6 +3,7 @@ import {
   About,
   AddNew,
   Home,
+  HoverMenuContainer,
   Image,
   LeftSide,
   LoginLogout,
@@ -21,6 +22,9 @@ const Navbar = () => {
 
   //Variablen Definieren
   const [loginText, setLoginText] = useState("Login");
+  const [menuCheck, setMenuCheck] = useState(true);
+
+  //LOGIN-LOGOUT TEXT CHANGING
   useEffect(() => {
     user?.name ? setLoginText("Logout") : setLoginText("Login");
   }, [user]);
@@ -31,13 +35,33 @@ const Navbar = () => {
       setUser({});
     }
   };
+
+  //Acilir menü Yapimi
+  const HoverMenu = () => {
+    setMenuCheck(!menuCheck);
+    console.log(menuCheck);
+  };
+
   return (
     <NavbarContainer>
       <LeftSide>
         <Image src={image1} />
       </LeftSide>
       <RightSide>
-        <img className="right-logo" src={image1} alt="" />
+        <img
+          onClick={() => HoverMenu()}
+          className="right-logo"
+          src={image1}
+          alt=""
+        />
+        {/* HAMBURGERE BASILDIGINDA ACILAN MENÜ GÖRÜNÜMÜ */}
+        <HoverMenuContainer menuCheck={menuCheck}>
+          <MyLink to="/">
+            <Home>Home</Home>
+          </MyLink>
+        </HoverMenuContainer>
+
+        {/* NORMAL GÖRÜNÜM WIDTH>800PX */}
         <MyLink to="/">
           <Home>Home</Home>
         </MyLink>

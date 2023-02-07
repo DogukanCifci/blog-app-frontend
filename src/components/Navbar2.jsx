@@ -20,6 +20,7 @@ const Navbar2 = () => {
         <img src={image1} alt="ok" />
       </div>
       <div className="right-part parts">
+        <img src={image1} alt="ok" />
         <Link to="/" className="link-container">
           <div className="link-container__tags">Home</div>
         </Link>

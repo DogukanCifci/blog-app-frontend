@@ -57,3 +57,19 @@ export const Register = styled(Profile)`
 `;
 
 // #####Bitis######
+
+//HOVERMENU STYLE
+
+export const HoverMenuContainer = styled.div`
+  width: 300px;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  display: ${({ menuCheck }) => (menuCheck ? "block" : "none")};
+  position: absolute;
+  right: 0;
+  top: 80px;
+  .text11 {
+    color: white !important;
+  }
+`;
