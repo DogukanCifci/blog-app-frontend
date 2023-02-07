@@ -25,19 +25,19 @@ const Navbar = () => {
     user?.name ? setLoginText("Logout") : setLoginText("Login");
   }, [user]);
 
-  //LOGIN-LOGOUT
   const LoginLogoutHandle = () => {
     if (user?.name) {
-      userHandle(user, setUser);
+      setLoginText("Login");
+      setUser({});
     }
   };
-
   return (
     <NavbarContainer>
       <LeftSide>
         <Image src={image1} />
       </LeftSide>
       <RightSide>
+        <img className="right-logo" src={image1} alt="" />
         <MyLink to="/">
           <Home>Home</Home>
         </MyLink>

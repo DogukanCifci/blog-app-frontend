@@ -24,12 +24,20 @@ export const Image = styled.img`
 // ###########RIGHT PART############
 export const RightSide = styled(LeftSide)`
   justify-content: flex-end;
+  @media (min-width: 800px) {
+    img {
+      display: none;
+    }
+  }
 `;
 
 export const MyLink = styled(Link)`
   display: flex;
   margin: 10px;
   text-decoration: none;
+  @media (max-width: 800px) {
+    display: none;
+  }
 `;
 
 // ############TIKLAMA YAZILARI##########
